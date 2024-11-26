@@ -1,0 +1,6 @@
+a = int(input('Введите число:'))
+b = int(input('Введите число:'))
+c = int(input('Введите число:'))
+f = max(a, b, c)
+d = min(a, b, c)
+print(f, d)
