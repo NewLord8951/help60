@@ -1,6 +1,9 @@
-n = int(input("Введите число:"))
-count = 0
-while (n > 0):
-    count = count + 1
-    n = n // 10
-print("Количество цифр равно:", count)
+number = int(input("Введите число: "))
+
+
+def digits(number):
+    str_number = str(number)
+    return len(str_number)
+
+
+print(digits(number))
