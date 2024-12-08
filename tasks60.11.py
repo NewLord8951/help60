@@ -1,17 +1,16 @@
-def sum_of_digits(a):
-    s = 0
-    while a > 0:
-        s += a % 10
-        a = a // 10
-    return s
+def digit_sum(n):
+    return sum(int(digit)) for digit in str(n)
 
 
-a = int(input("Введите число:"))
-for i in range(0, a + 1):
-    s = sum_of_digits(i)
-    for j in range(2, 10):
-        s1 = sum_of_digits(i * j)
-        if s != s1:
-            break
-    else:
-        print("%d " % i, end="")
+def find_spicial_numbers(n):
+    special_numbers = []
+    for i in range(N + 1):
+        original_sum = digit_sum(i)
+        if all(original_sum == digit_sum(i * multiplier) for multiplier in  range(2, 10)):
+            special_numbers.append(i)
+        return special_numbers
+    
+N = int(input("Введите число N: "))
+special_numbers = find_spicial_numbers(N)
+
+print("Число с неизменной суммой цифр:", special_numbers)
