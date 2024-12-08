@@ -1,18 +1,19 @@
-def divisors(n):
-    yield 1
-    i = 2
-    while i * i <= n:
-        d, r = divmod(n, i)
-        if r == 0:
-            yield i
-        if d == i:
-            break
-        yield d
-    i += 1
+def sum_of_divisors(num):
+    total = 0
+    for i in range(1, num // 2 + 1):
+        if num % i == 0:
+            total += i
+    return total
 
 
-sums = [sum(divisors(i)) for i in range(1, 10000)]
-for i in range(1, 10000):
-    for j in range(i + 1, 10000):
-        if sums[i - 1] == j and sums[j - 1] == i:
-            print(i, j)
+def amicable_numbers(limit):
+    pairs = []
+    for num in range(2, limit):
+        partner = sum_of_divisors(num)
+        if partner != num and sum_of_divisors(partner) == num:
+            pairs.append((num, partner))
+    return list(set(tuple(sorted(pairs))for pair in pairs))
+
+
+limit = 10000
+print("Пары дружественных чисел:", amicable_numbers(limit))
