@@ -1,15 +1,19 @@
-def isPrime(X):
-    x = str(X)
-    n = 2
-    i = 0
-    while X >= n:
-        i += 1
-        n *= 10
-    if i == 3:
-        num = int(x[i-1])
-        if num % 2 != 0:
-            D = X // 10
-            if D % 2 != 0:
-                print("Да, число гиперпростое.")
-            else:
-                print("Нет, число не гиперпростое.")
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+
+def is_hiperprime(n):
+    str_n = str(n)
+    for i in range(len(str_n)):
+        for j in range(i+1, len(str_n) + 1):
+            if not is_prime(int(str_n[i:j])):
+                return False
+    return True
+
+
+print(is_hiperprime(input('Введите число')))
