@@ -1,4 +1,8 @@
-def reverse_number(n):
-    n = str(n)[::-1]
-    n = int(n)
-    return n
+num1 = input("Введите число: ")
+
+
+def reverse_number(num1):
+    return num1[::-1]
+
+
+print(reverse_number(num1))
