@@ -1,6 +1,12 @@
-def check_perfect(num):
-    factors = []
+num = int(input("Введите число: "))
+
+
+def perfect(num):
+    spisok = []
     for i in range(1, num):
-        if num % i == 0:
-            factors.append(i)
-    return sum(factors) == num
+        if num % 1 == 0:
+            spisok.append(i)
+    return sum(spisok) == num
+
+
+print(perfect(num))
