@@ -1,8 +1,10 @@
-import random
+from random import randint
 
 
-def бросок_двух_кубиков():
-    кубик_1 = random.randint(1, 6)
-    кубик_2 = random.randint(1, 6)
-    сумма = кубик_1 + кубик_2
-    return сумма
+def cubes():
+    cube1 = randint(1, 7)
+    cube2 = randint(1, 7)
+    return cube1, cube2
+
+
+print(cubes())
